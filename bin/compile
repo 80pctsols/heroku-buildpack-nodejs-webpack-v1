@@ -129,6 +129,16 @@ build_dependencies() {
 header "Building dependencies"
 build_dependencies | output "$LOG_FILE"
 
+compile_webpack() {
+    WEBPACK_DIR=$BUILD_DIR/freedom/static
+    cd $WEBPACK_DIR
+    webpack -d
+    cd -
+}
+
+header "Compiling assets using webpack"
+compile_webpack | output "$LOG_FILE"
+
 cache_build() {
   local cache_directories=$(get_cache_directories)
 
