@@ -132,7 +132,7 @@ build_dependencies | output "$LOG_FILE"
 compile_webpack() {
     WEBPACK_DIR=$BUILD_DIR/freedom/static
     cd $WEBPACK_DIR
-    webpack -d
+    $BUILD_DIR/node_modules/webpack/bin/webpack.js -d
     cd -
 }
 
